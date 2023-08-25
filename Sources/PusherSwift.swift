@@ -28,7 +28,7 @@ let CLIENT_NAME = "pusher-websocket-swift"
         self.key = key
         let urlString = URL.channelsSocketUrl(key: key, options: options)
         let wsOptions = NWWebSocket.defaultOptions
-        wsOptions.setSubprotocols(["pusher-channels-protocol-\(PROTOCOL)"])
+        // wsOptions.setSubprotocols(["pusher-channels-protocol-\(PROTOCOL)"])
         let ws = NWWebSocket(url: URL(string: urlString)!, options: wsOptions)
         connection = PusherConnection(key: key, socket: ws, url: urlString, options: options)
         connection.createGlobalChannel()
